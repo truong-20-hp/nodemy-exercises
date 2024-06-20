@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(47, 163, 184);
+            display: flex;
+            font-family:Arial, Helvetica, sans-serif; 
+        }
+
+        .alert {
+            margin: auto;
+            padding: 25px 60px;
+            background-color: #fff;
+            color: rgb(47, 163, 184);
+            font-size: 35px;
+            font-weight: 500;
+            border-radius: 15px;
+
+        }
+
+        .box {
+            margin: auto;
+
+        }
+
+        .result{
+            width: 250px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            color: #fff;
+            font-size: 100px;
+            font-weight: 600;
+            margin: auto;
+        }
+
+        .detail {
+            display: flex;
+
+        }
+
+        .card {
+            width: 300px;
+            background-color: #fff;
+            margin: 60px 20px 0;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 25px;
+            font-weight: 600;
+            overflow: hidden;
+        }
+
+        .card p:first-child {
+            background-color: rgb(139, 198, 238);
+            color: #fff;
+            padding: 8px 0
+        }
+
+        .card p:last-child {
+            padding: 8px 0;
+        }
+
+
+        .hide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="alert">Press Any Key</div>
+    <div class="box hide">
+        <div class="result">40</div>
+        <div class="detail">
+            <div class="card key">
+                <p>Key</p>
+                <p>0</p>
+            </div>
+            <div class="card location">
+                <p>Location</p>
+                <p>0</p>
+            </div>
+            <div class="card which">
+                <p>Which</p>
+                <p>0</p>
+            </div>
+            <div class="card code">
+                <p>Code</p>
+                <p>0</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        let alerts = document.querySelector('.alert')
+        let box = document.querySelector('.box')
+        let key = document.querySelector('.key p:last-child')
+        let locations = document.querySelector('.location p:last-child')
+        let which = document.querySelector('.which p:last-child')
+        let code = document.querySelector('.code p:last-child')
+        let result = document.querySelector('.result')
+
+        document.addEventListener('keydown', function (e) {
+            alerts.classList.add('hide')
+            box.classList.remove('hide')
+
+            key.innerText = e.key
+            locations.innerText = e.location
+            which.innerText = e.which
+            code.innerText = e.code
+
+            result.innerText = e.which
+
+
+            // nang cao :
+            
+            // switch(e.which) {
+            //     case 32: 
+            //         key.innerText = 'space'
+            //         break
+            //     case 27: 
+            //         key.innerText = 'ESC'
+            //         break
+            //     case 20: 
+            //         key.innerText = 'Caps'
+            //         break    
+            //     default:
+            //         key.innerText = e.key
+
+            //     }
+
+            // switch(e.which) {
+            //     case 32:
+            //         result.innerText ='spa'
+            //         break
+            //     case 20:
+            //         result.innerText ='Caps'
+            //         break
+            //     case 17:
+            //         result.innerText ='Ctrl'
+            //         break    
+            //     default:
+            //         result.innerText = e.key
+
+            // }   
+                
+        })
+    </script>
+</body>
+</html>

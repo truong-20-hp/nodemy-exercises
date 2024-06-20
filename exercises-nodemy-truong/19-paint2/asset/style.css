@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #000; */
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #dadada;
+    overflow: hidden;
+}
+
+.tool {
+    display: flex;
+    height: 50px;
+    padding: 6px 10px;
+    background-color: rgb(85, 147, 201);
+}
+
+.tool > * {
+    font-size: 24px;
+    width: 50px;
+    height: 100%;
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.save {
+    margin-left: auto;
+}
+
+.contain {
+    display: flex;
+    justify-content: center;
+}
+
+canvas{
+    
+    background-color: #fff;
+}
+
+.cursor-aquare {
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+    <link rel="stylesheet" href="./asset/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4503/4503949.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <video src="https://cdn.pixabay.com/video/2021/08/10/84574-586228759_large.mp4"></video>
+
+        <div class="controls">
+            <div class="play">
+                <i class='bx bx-play'></i>
+            </div>
+            <div class="timer">00:00/00:00</div>
+            <div class="progress">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="seek-prev">
+                -5
+                <i class='bx bx-rewind-circle'></i>
+                
+            </div>
+            <div class="seek-next">
+                <i class='bx bx-fast-forward-circle' ></i>
+                5
+            </div>
+            <div class="volume">
+                <i class='bx bx-volume-full'></i>
+                <!-- <i class='bx bx-volume-mute'></i> -->
+                <input type="range" min="0" max="1" step="0.001">
+            </div>
+            <div class="full-creen">
+                <i class='bx bx-fullscreen'></i>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+<script src="./asset/app.js"></script>
+</html>

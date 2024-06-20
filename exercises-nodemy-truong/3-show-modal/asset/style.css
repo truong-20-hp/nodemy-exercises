@@ -1,0 +1,120 @@
+:root {
+    --pink-color : #e26e70;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height : 100vh;
+    width: 100vw;
+    background:  linear-gradient(45deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 50%, rgb(255, 204, 112) 100%); 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal__open__btn {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none ;
+    border-radius: 6px;
+    box-shadow: 0 3px 5px #444;
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    visibility: visible;
+    transition:all 0.5s linear;
+
+}
+
+@keyframes showModal {
+    from {
+        opacity: 0;
+        top: -500px;
+
+    }
+    to {
+        opacity: 1;
+        top: -100px;
+    
+    }
+}
+
+.modal__inner {
+    width: 450px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    top: -100px;
+    animation: showModal .3s linear;
+    position: relative;
+    transition: all linear 0.3s;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    font-size: 20px;
+    background-color: var(--pink-color);
+    color: #fff;
+}
+
+.modal__header i {
+    cursor: pointer;
+}
+
+.modal__header i:hover {
+    transform: scale(1.1);
+}
+.modal__body {
+    padding: 15px;
+
+}
+
+.modal__body h2 {
+    color: var(--pink-color);
+    margin-bottom: 10px;
+}
+
+.modal__footer {
+    text-align: end;
+    margin-right: 15px
+}
+
+.modal__close {
+    padding: 10px 20px;
+    margin: 30px 0 15px;
+    text-align: end;
+    border-radius: 4px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    background-color: var(--pink-color);
+    color: #fff;
+    cursor: pointer
+}
+
+.modal__close:hover {
+    transform: scale(0.944);
+}
+
+.modal.open{
+    display: flex;
+}

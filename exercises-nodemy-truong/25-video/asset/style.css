@@ -1,0 +1,65 @@
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 600px;
+    overflow: hidden;
+    position: relative;
+}
+video {
+    width : 100%
+}
+
+.controls {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background: linear-gradient(to top , rgba(20, 13, 13, 0.616) , #fff);
+    position: absolute;
+    bottom: -100px;
+
+}
+
+.container:hover .controls {
+    left: 0;
+    bottom: 10px;
+    transition: 0.5s;
+}
+
+.controls > *{
+    margin: 0 5px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+    font-size: 18px;
+}
+
+.progress {
+    flex: 1;
+    height: 4px;
+    background-color: #fff;
+    position: relative;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: rgb(26, 147, 218);
+    position: absolute;
+    left: 0;
+    top: 0;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARK / LIGHTt</title>
+    <link rel="stylesheet" href="./asset/style.css">
+</head>
+<body >
+    <div class="header">
+        <div class="logo">Nodemy</div>
+        <div class="toggle-mode">
+            <input type="checkbox" id="input-checkbox" hidden>
+            <label class="label" for="input-checkbox">
+                <div></div>
+            </label>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="title">Light/Dark Mode</div>
+        <div class="box">
+            <p class="decs">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos alias animi magni, error deleniti autem voluptates exercitationem? Corporis magni dolore similique provident iusto dignissimos explicabo non necessitatibus, voluptatibus eum delectus?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque optio necessitatibus aut voluptate aliquam, numquam ipsa autem, quo eveniet dolore laboriosam doloribus perferendis voluptas aliquid sunt nulla placeat excepturi magni.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque debitis, distinctio accusamus aliquid laborum quae pariatur alias fugit possimus perspiciatis minus iusto, cum exercitationem libero? Odit eligendi itaque fugiat accusantium!
+
+            </p>
+            <div class="list-btn">
+                <button class="btn">Nodemy</button>
+                <button class="btn">Youtube</button>
+                <button class="btn">Facebook</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    var body = document.querySelector('body')
+    var label = document.querySelector('label')
+    var input = document.querySelector('input')
+    var dot = document.querySelector('label div')
+
+
+    input.onchange = function () {
+        body.classList.toggle('dark')
+        dot.classList.toggle('active')
+
+        var classBody = body.getAttribute('class')
+        localStorage.setItem('classBody' , classBody)
+
+        var classDot = dot.getAttribute('class')
+        localStorage.setItem('classDot' , classDot)
+
+
+    }
+    
+    function init () {
+        var getClassBody = localStorage.getItem('classBody')
+        body.setAttribute('class' , getClassBody)
+
+        var getClassDot = localStorage.getItem('classDot')
+        dot.setAttribute('class' , getClassDot)
+    }
+
+    init()
+
+    
+
+
+</script>
+</html>

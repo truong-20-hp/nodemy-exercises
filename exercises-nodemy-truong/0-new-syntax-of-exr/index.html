@@ -1,0 +1,163 @@
+Day 1 :
+    tranform : rotate(40deg) // quay một góc 45 độ theo chiều kim đồng hồ
+
+Day 3:
+
+    element.stopPropagation() // ngăn chặn sự kiện nổi bọt
+        -sự kiện nổi bọt xảy ra từ thằng được lắng nghe sự kiện sau đó lan ra 
+        và ăn vào các thẻ cha có cùng sự kiện đến khi đạt đến phần tử gốc
+        hoặc khi gặp xử lí ngăn nổi bọt
+
+Day 4: 
+    pointer-event : none  // không phản ứng với cac phần tử được gán và bỏ qua chúng
+    pointer-event : auto // phản ứng bình thường với các phần tử
+
+Day 5: 
+
+    this.parentElement // set thẻ cha của thẻ hiện tại
+    this.previousElementSibling // set thẻ anh em ngay trước của thẻ hiện tại
+    this.nextElementSibling  // set thẻ anh em ngay sau của nó
+
+Day 7 :
+
+    array.splice(start, deletCount,x3,x4,..) // xóa hoặc thêm một phần tử vào mảng
+        start : vị trí bắt đầu
+        deletCount : số lượng phần tử xóa
+        x3 , x4 : phần tử muốn thêm vào
+
+Day 9 : 
+
+    new Date().toLocaleString()  // trả về thời gian hiện tại(giờ, phút, giây, ngày tháng năm)
+
+Day 10 :
+
+    white-space: nowrap; // không xuống dòng
+    overflow: hidden;  // xóa các phần thừa ra 
+    text-overflow: ellipsis; // tạo dấu ...
+    width: 90%; // xét chiều dài để không chạm vào phần tử đằng sau
+
+    ==> tạo dấu 3 chấm khi decs dài
+
+
+    localStorage.setItem('key' , 'value') // lưu dữ liệu vào localStorage
+    localStorage.getItem('key') // lấy dữ liệu từ localStorage
+
+    ==> dữ liệu lưu vào storage là một chuỗi vì vậy muốn lưu đối tượng javascript
+        thì phải đổi sang dạng string
+
+    localStorage.setItem('key' , JSON.stringify(value))
+
+Day 12 : 
+
+    e.clientX , e.clientY : tọa độ x, y của vị trí con trỏ chuột khi xảy ra sự kiện
+        ==> tính từ góc trái bên trên của viewport (màn hình hiển thị)
+        ==> không phụ thuộc vào việc cuộn trang
+
+    e.pageX , e.pageY : tọa độ x, y của con trỏ chuột
+        ==> là giá trị tuyệt đối tính từ đầu trang của page
+        ==> nếu cuộn trang thì tọa độ sẽ thay đổi
+
+    element.offsetLeft , element.offsetTop
+    ==> Cung cấp số pixel từ phần tử hiện tại đến phần tử cha gần nhất có thuộc tính định vị (position) là relative, absolute hoặc fixed.
+     Nếu không có phần tử cha nào có thuộc tính định vị, nó sẽ tính từ phần tử body.
+
+Day 13 : 
+
+    **sử dụng blob để tải ảnh lên trang Web: 
+
+        img.src = (URL.createObjectURL(file))
+        let img = document.createElement('img')
+        preview.appendChild(img)
+
+        note: file là dữ liệu của ảnh được tải lên từ thẻ input
+              URL.createObjectURL(file) : tạo ra một đường dẫn đến ảnh trong máy
+              Sau đó gán cho src của thẻ img để hiển thị lên trình duyệt
+
+    ** sử dụng base64 để tải ảnh lên trình duyệt:
+
+        var fileReader = new FileReader() // tạo đối tượng để đọc file
+        fileReader.readAsDataURL(file) // đọc file và chuyển thành URl dạng base64
+        console.log(fileReader) //
+        fileReader.onloadend = function (e) {
+            img.src = this.result
+        } // đọc xong thì gán url cho src của img và in ra trình duyệt
+        
+Day 16 :
+
+    window.innerHeight  // là chiều cao của của sổ trình duyệt thực tế 
+                           mà ta có thể nhìn thấy
+                            
+    elemetn.getClientRects()[0]  // trả về vị trí kích thước của element
+                        (width, height, top ,bottom , left, right , x ,y)
+
+
+Day 17 : 
+
+    parseInt() // phân tích một chuỗi thành 1 số nguyên
+    clearInterval()  // xóa một hàm setInterval()
+
+
+Day 18 :
+
+    sự kiện : 
+        ondrag  // lắng nghe sự kiện đang được kéo
+
+        ondrop  // element được lắng nghe sự kiện được thả
+            ==> hành động mặc định của drop là nếu không có xử lí sự kiện thả
+                trình duyệt sẽ coi đối tượng kéo là một tập tin và mở tập tin đó
+
+        ondragover  // element lắng nghe sự kiện được kéo qua
+            ==> hành động mặc định khi kéo qua là ngăn không cho kéo vào phần tử khác
+            ==> ngăn chặn hành động mặc định:
+            ==> e.preventDefault()
+
+        ondragstart // xảy ra khi bắt đầu kéo
+        ondragend // xảy ra khi kết thúc kéo
+
+Day 19 : 
+
+    * canvas : là một thẻ của html có thể vẽ trên đó,
+      để vẽ trên canvas thì phải truy cập đến context2d bằng phương thức:
+      ==> canvas.getContext('2d')
+
+    * khi đã có context thì có thể sử dụng các phương thúc để vẽ
+
+    * offsetX, offsetY : sẽ trả về tọa độ x , y của phần tử xảy ra sự kiện con trỏ chuột
+    * canvas.toDataURL() // chuyển nội dung của canvas thành một url dưới dạng base64
+    * thuộc tính : download = "" trong thẻ HTML cho phép download nội dung của href="" về thiết bị
+
+
+Day 20 : 
+    
+    element.substring(startIndex , endIndex)  // trích xuất các phần tử của một chuỗi và trả về 
+                                                các phần tử đó
+    trong đó : 
+        startIndex : vị trí bắt đầu
+        endIndex : vị trí kết thúc
+        ==> nếu startIndex > endIndex thì sẽ được hoán đổi vị trí cho nhau
+
+Day 21: 
+
+    :root {
+        --primary-color : #858503
+    }  // sẽ lưu biến toàn cục và tất cả các thẻ trong HTML đều có thể dùng
+
+    .element {
+        --primary-color : #767778
+    }  // chỉ element đó hoặc con của nó mới có thể dùng biến này
+
+
+Day 23 : 
+
+    element.style.cssText = ``  // thêm css cho element dưới dạng string
+
+
+Day 25 : 
+
+    toString().padStart(length , string)
+    ==> để thêm kí tự vào đầu chuỗi nếu chuỗi chưa đạt độ dài mong muốn
+
+    vd: '5' thành '05'
+    ==> element.toString().padStart(2,'0')
+        2 là độ dài mong muốn
+        0 là kí tự thêm vào đầu chuỗi

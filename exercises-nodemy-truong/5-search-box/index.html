@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search box</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* border: 1px solid #000; */
+        }
+
+        body {
+            background:  linear-gradient(to right, #4daf54, #3d8880); 
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-box {
+            width : 70px;
+            height: 70px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: #000;
+            transition: 0.3s;
+        }
+        
+        .search-box.open {
+            width: 400px;
+        }
+        
+        .search-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width : 70px;
+            height: 70px;
+            border: none;
+            background-color: #fff;
+            font-size: 30px;
+            font-weight: 500;
+            cursor: pointer;
+
+        }
+
+        .search-input {
+            width : calc(100% - 70px);
+            height : 100%;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            color: #fff;
+            font-size: 24px;
+            padding: 0 30px
+            
+        }
+        
+      
+    </style>
+</head>
+<body>
+    <div class="search-box">
+        <input type="text" class="search-input"></input>
+        <button class="search-btn">
+            <i class='bx bx-search-alt-2'></i>
+        </button>
+    </div>
+
+
+    <script>
+        var searchBox = document.querySelector('.search-box')
+        var searchBtn = document.querySelector('.search-btn')
+        var searchInput = document.querySelector('.search-input')
+        
+        searchBtn.addEventListener('click', function () {
+            this.parentElement.classList.toggle('open')
+            this.previousElementSibling.focus()
+        })
+    </script>
+</body>
+</html>

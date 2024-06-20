@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    --facebook-color: #456dc4;
+    --github-color: #161718;
+    --twitter-color: #7ed6ec;
+    --youtube-color: #c70f0f;
+    --instagram-color: #e23f75;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e1e1e1;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.icon {
+    margin: 0 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.icon i {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #aaa;
+    transition: 0.3s;
+}
+
+.icon i:hover {
+    color: #fff
+}
+
+.tooltip {
+    background-color: #7ed6ec;
+    padding: 8px 12px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 20px;
+    color: #fff;
+    box-shadow: 0 0 10px #aaa;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.icon:hover .tooltip {
+    opacity: 1;
+}
+
+.tooltip::before {
+    content:'';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #c70f0f;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.icon:hover .tooltip {
+    top: -60px;
+}
+
+.facebook i:hover ,
+.facebook .tooltip,
+.facebook .tooltip::before {
+    background-color: var(--facebook-color);
+}
+.github i:hover ,
+.github .tooltip,
+.github .tooltip::before {
+    background-color: var(--github-color);
+}
+.instagram i:hover ,
+.instagram .tooltip,
+.instagram .tooltip::before {
+    background-color: var(--instagram-color);
+}
+.twitter i:hover ,
+.twitter .tooltip,
+.twitter .tooltip::before {
+    background-color: var(--twitter-color);
+}
+.youtube i:hover ,
+.youtube .tooltip,
+.youtube .tooltip::before {
+    background-color: var(--youtube-color);
+}
